@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<form xmlns="http://www.demandware.com/xml/form/2008-04-19" secure="false">
+    <group formid="number">
+	    <field
+            formid="BackInStock"
+            label="label.input.number.twilio"
+            mandatory="true"
+            max-length="16"
+            regexp="^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$"
+            type="string" />
+        </group>
+</form>

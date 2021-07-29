@@ -1,0 +1,49 @@
+{
+  "step-types":
+  {
+    "script-module-step":
+    [
+      {
+        "@type-id":"custom.sendBackInStockNotif",
+        "@supports-parallel-execution":"false",
+        "@supports-site-context":"true",
+        "@supports-organization-context":"false",
+        "description":"This script deletes all custom object for a given type. It runs in site scope.",
+        "module":"int_twilio/cartridge/scripts/steps/sendBackInStockNotif.js",
+        "function":"SendNotifications",
+        "transactional":"true",
+        "timeout-in-seconds":"900",
+        "parameters":
+        {
+          "parameter":
+          [
+            {
+              "@name":"MessageString",
+              "@type":"string",
+              "@required":"true",
+              "description":"The Custom string to send to all registered for notification users."
+            }
+          ]
+        },
+        "status-codes":
+        {
+          "status":
+          [
+              {
+                  "@code": "ERROR",
+                  "description": "Used when the step failed with an error."
+              },
+              {
+                  "@code": "FINISHED",
+      			  "description": "Used when the step finished successfully."
+              },
+              {
+                  "@code": "FINISHED_WITH_WARNINGS",
+      			  "description": "Used when the step finished with warnings."
+              }
+          ]
+        }
+      }
+    ]
+  }
+}

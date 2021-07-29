@@ -5,6 +5,7 @@ var webpack = require('sgmf-scripts').webpack;
 var ExtractTextPlugin = require('sgmf-scripts')['extract-text-webpack-plugin'];
 var jsFiles = require('sgmf-scripts').createJsPath();
 var scssFiles = require('sgmf-scripts').createScssPath();
+var sgmfScripts = require('sgmf-scripts');
 
 var bootstrapPackages = {
     Alert: 'exports-loader?Alert!bootstrap/js/src/alert',
@@ -21,11 +22,11 @@ var bootstrapPackages = {
 };
 
 module.exports = [{
-    mode: 'production',
+    mode: 'development',
     name: 'js',
     entry: jsFiles,
     output: {
-        path: path.resolve('./cartridges/app_storefront_base/cartridge/static'),
+        path: path.resolve('./cartridges/int_twilio/cartridge/static'),
         filename: '[name].js'
     },
     module: {
@@ -45,11 +46,11 @@ module.exports = [{
     },
     plugins: [new webpack.ProvidePlugin(bootstrapPackages)]
 }, {
-    mode: 'none',
+    mode: 'development',
     name: 'scss',
     entry: scssFiles,
     output: {
-        path: path.resolve('./cartridges/app_storefront_base/cartridge/static'),
+        path: path.resolve('./cartridges/int_twilio/cartridge/static'),
         filename: '[name].css'
     },
     module: {

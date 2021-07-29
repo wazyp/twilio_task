@@ -1,0 +1,14 @@
+<div class="row register-notification">
+    <div class="col-sm-12 twilio-register-phone">
+        <form action="${URLUtils.url('BackInStock-Subscribe')}" method="POST" class="twilio-form" name="twilio-form" encoding="off" />
+            <label for="choose">${Resource.msg('info.twilio.registernumber', 'twilio', 'Register number')}</label>
+
+            <input type="text" class="form-control twilio-number" name="BackInStock"
+                <isprint value="${pdict.twilioForm.number.BackInStock.attributes}" encoding="off" />>
+            <button type="submit" class="btn btn-primary btn-twilio" data-href="${URLUtils.url('BackInStock-Subscribe')}">
+                <i class="fa fa-bell"></i>
+                ${Resource.msg('button.twilio.register', 'twilio', null)}
+            </button>
+        </form>
+    </div>
+</div>
